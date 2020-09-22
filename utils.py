@@ -64,7 +64,6 @@ def deckToCards(deck):
 def makeBestHand(hand):
     power = int
     specs = list()
-    fSuit = int
     pairs = list()
     trips = list()
     quads = list()

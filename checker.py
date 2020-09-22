@@ -19,7 +19,6 @@ def aceStraightHigh(deck):
 
 def duplicates(hand, pairs, trips, quads):
     counts = Counter(card.number for card in hand)
-    dupNums = list()
     for num, times in counts.items():
         if times == 2:
             temp = findCard(hand, num)
@@ -33,6 +32,12 @@ def duplicates(hand, pairs, trips, quads):
     pairs.sort(key = operator.attrgetter('number'), reverse = True)
     trips.sort(key = operator.attrgetter('number'), reverse = True)
     quads.sort(key = operator.attrgetter('number'), reverse = True)
+
+def suitCounter(hand, suitCounts):
+    counts = Counter(card.suit for card in hand)
+    for suit, times in counts.items():
+        suitCounts.append(times) 
+
 
 def flushCheck(hand):
     flush = False
